@@ -4,5 +4,6 @@ public:
         
         // node->val=node->next->val;
         *node=*node->next;
+        //hacktoberfest-accepted
     }
 };
