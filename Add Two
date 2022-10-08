@@ -5,9 +5,7 @@ public:
         while(l1!=NULL || l2!=NULL )
               {
             
-            int a=0,b=0;   if(l1!=NULL)a=l1->val; if(l2!=NULL)b=l2->val;
-            int xp=a+b+t;
-            if(xp>9){xp-=10; t=1;}
+          
             else t=0;
                  ListNode* xpp=new ListNode(xp);  pp->next=xpp; pp=pp->next;
         if(l1!=NULL)    l1=l1->next;  if(l2!=NULL) l2=l2->next;
