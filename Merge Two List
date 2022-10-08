@@ -1,0 +1,41 @@
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        if(l1==NULL)return l2;
+        // if(l2==NULL)return l1;
+        
+        
+         ListNode* cuu=l1;
+         ListNode* pev=NULL;
+        
+        while(l1!=NULL && l2!=NULL)
+        {
+            if(l1->val > l2->val)
+            {
+               ListNode* forw=new ListNode(l2->val); l2=l2->next;
+              if(pev==NULL)
+              {
+                  pev=forw;
+                  pev->next=l1;
+                  cuu=pev;
+              }
+                else
+                {
+                    forw->next=l1;
+                    pev->next=forw;
+                    pev=forw;
+                }
+            }
+            else if(l1->next!=NULL) {pev=l1; l1=l1->next;}
+            
+            else break;
+        }
+       
+        if(l2!=NULL)
+        {
+           l1->next = l2;
+        }
+        
+        return cuu;
+    }
+};
